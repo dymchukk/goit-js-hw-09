@@ -10,6 +10,15 @@ const refs = {
 refs.submitBtn.addEventListener('click', onSubmitBtn);
 
 
+function validateForm() {
+  const validForm = document.form["form"]["amount"].value;
+  if (validForm == "") {
+    alert("Please enter the number");
+    return false;
+  }
+}
+
+
 function onSubmitBtn(event) {
     event.preventDefault();
   const data = {
