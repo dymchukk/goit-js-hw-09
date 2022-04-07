@@ -7,13 +7,13 @@ const refs = {
   submitBtn: document.querySelector('button'),
 }
 
-refs.submitBtn.addEventListener('click', onSubmitBtn);
+refs.submitBtn.addEventListener('submit', onSubmitBtn);
 
 
 function validateForm() {
-  const validForm = document.form["form"]["amount"].value;
-  if (validForm == "") {
-    alert("Please enter the number");
+const validForm = document.forms[".form"]["step"].value;
+  if (validForm === "") {
+    alert("Заполните это поле");
     return false;
   }
 }
