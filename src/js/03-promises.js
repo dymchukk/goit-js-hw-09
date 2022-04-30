@@ -7,16 +7,7 @@ const refs = {
   submitBtn: document.querySelector('button'),
 }
 
-refs.submitBtn.addEventListener('submit', onSubmitBtn);
-
-
-function validateForm() {
-const validForm = document.forms[".form"]["step"].value;
-  if (validForm === "") {
-    alert("Заполните это поле");
-    return false;
-  }
-}
+refs.submitBtn.addEventListener('click', onSubmitBtn);
 
 
 function onSubmitBtn(event) {
