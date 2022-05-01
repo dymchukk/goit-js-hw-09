@@ -12,14 +12,14 @@ refs.submitBtn.addEventListener('submit', onSubmitBtn);
 
 function onSubmitBtn(event) {
     event.preventDefault();
-  const { delay, step, amount } = event.target.elements;
-  newPromiseCreation({
-    delay: Number(delay.value),
-    step: Number(step.value),
-    amount: Number(amount.value)
-  })
-    
+  const data = {
+    delay: Number(refs.delayInput.value),
+    step: Number(refs.stepInput.value),
+    amount: Number(refs.amountInput.value),
   }
+  
+  newPromiseCreation(data);
+}
   
 function  newPromiseCreation({ delay, step, amount }) {
   let calculatedDelay = delay;
