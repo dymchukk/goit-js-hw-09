@@ -7,19 +7,19 @@ const refs = {
   submitBtn: document.querySelector('button'),
 }
 
-refs.submitBtn.addEventListener('click', onSubmitBtn);
+refs.submitBtn.addEventListener('submit', onSubmitBtn);
 
 
 function onSubmitBtn(event) {
     event.preventDefault();
-  const data = {
-    delay: parseInt(refs.delayInput.value),
-    step: parseInt(refs.stepInput.value),
-    amount: parseInt(refs.amountInput.value),
+  const { delay, step, amount } = event.target.elements;
+  newPromiseCreation({
+    delay: Number(delay.value),
+    step: Number(step.value),
+    amount: Number(amount.value)
+  })
+    
   }
-  
-  newPromiseCreation(data);
-}
   
 function  newPromiseCreation({ delay, step, amount }) {
   let calculatedDelay = delay;
